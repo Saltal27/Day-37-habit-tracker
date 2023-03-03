@@ -33,7 +33,7 @@ GRAPH_ID = "pythontest"
 # ---------------------------- CREATING / UPDATING A PIXEL ------------------------------- #
 today = datetime.now()
 
-pixel_api_endpoint = f"https://pixe.la/v1/users/{USERNAME}/graphs/pythontest"
+pixel_api_endpoint = f"https://pixe.la/v1/users/{USERNAME}/{GRAPH_ID}/pythontest"
 pixel_request_body = {
     "date": today.strftime("%Y%m%d"),
     "quantity": "9",
@@ -42,5 +42,5 @@ pixel_request_body = {
 # pixel_response = requests.post(url=pixel_api_endpoint, json=pixel_request_body, headers=HEADERS)
 
 # ---------------------------- DELETING A PIXEL ------------------------------- #
-delete_pixel_api_endpoint = f"https://pixe.la/v1/users/{USERNAME}/graphs/pythontest/{today.strftime('%Y%m%d')}"
+delete_pixel_api_endpoint = f"https://pixe.la/v1/users/{USERNAME}/graphs/{GRAPH_ID}/{today.strftime('%Y%m%d')}"
 delete_pixel_response = requests.delete(url=delete_pixel_api_endpoint, headers=HEADERS)
